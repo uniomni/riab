@@ -1,0 +1,9 @@
+[submodule "submodules/riab_server"]
+	path = submodules/riab_server
+	url = git@github.com:uniomni/riab_server.git
+[submodule "submodules/riab_django"]
+	path = submodules/riab_django
+	url = git@github.com:uniomni/riab_django.git
+[submodule "submodules/pyplugin"]
+	path = submodules/pyplugin
+	url = git@github.com:uniomni/pyplugin.git
