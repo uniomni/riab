@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# If this file is modified, you need to run
+# pip install -e riab
+# in a working directory outside the riab tree
+
+# Clean stale data in GeoServer, GeoNetwork and Django.
+risiko clean
+
+# Start GeoNode servers in silent mode
+risiko start
+
+# Show code quality
+if [ $# -eq 0 ];then
+    risiko-lint
+else
+    echo
+fi
+
+# FIXME: test suite only works from within $RIAB_HOME/riab
+cd $RIAB_HOME/riab
+risiko test impact --noinput --with-id $@
+
+# Stop GeoNode
+risiko stop

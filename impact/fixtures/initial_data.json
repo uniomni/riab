@@ -1,0 +1,30 @@
+[
+    {
+        "pk": 1,
+        "model": "impact.workspace",
+        "fields": {
+            "user": 1,
+            "servers": [
+                
+            ]
+        }
+    },
+    {
+        "pk": 1,
+        "model": "auth.user",
+        "fields": {
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2011-03-29 23:32:19",
+            "groups": [],
+            "user_permissions": [],
+            "password": "sha1$6e0cf$2b4e93a9dc89d1197d6b6d636fb150b978b83bc2",
+            "email": "",
+            "date_joined": "2011-03-29 23:32:19"
+        }
+    }
+]

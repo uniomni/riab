@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+"""Upload data to local Risiko GeoServer
+
+Usage:
+
+risiko-upload filename
+
+where filename can be either a single file or a directory of files
+"""
+
+# If this file is modified, you need to run
+# pip install -e riab
+# in a working directory outside the riab tree
+
+import sys
+import time
+from impact.storage.io import save_to_geonode, console_log
+
+def usage():
+    print 'risiko-upload {directory|filename}'
+
+if __name__ == '__main__':
+    console_log()
+
+    if len(sys.argv) != 2:
+        usage()
+    else:
+        thefile = sys.argv[1]
+
+        # FIXME (Ole): Expose overwrite to command line
+        t0 = time.time()
+        uploaded = save_to_geonode(thefile,
+                                   overwrite=True,
+                                   check_metadata=False)  # Speeds it up
+        print 'Finished uploading in %.f seconds' % (time.time() - t0)
